@@ -4,6 +4,10 @@
     <title>Famous Quote Generator</title>
 </head>
 <body>
+    <script>
+        var quoteList = new Array("달리는 기차 위에 중립은 없다", "만국의 노동자여, 단결하라!");
+        var authorList = new Array("하워드 진", "카를 마르크스");
+    </script>
     <div class="background-image"></div>
     <div class="Realtitle">Famous Quote Generator</div>
     <div class="Quote">
@@ -13,8 +17,10 @@
     <button class="ppap" onclick="changeText()">버튼을 눌러보세요</button>
 	<script>
 		function changeText() {
-			document.querySelector(".Quote").innerHTML = "라이라이차차차";
-			document.querySelector("#Author").innerHTML = "-황근출";
+            let quoteNum = Math.floor(Math.random()*2);
+			document.querySelector(".Quote").innerHTML = quoteList[quoteNum];
+			document.querySelector("#Author").innerHTML = "-"+authorList[quoteNum];
+			// document.querySelector("#Author").innerHTML = "-황근출";
 		}
 	</script>
 </body>

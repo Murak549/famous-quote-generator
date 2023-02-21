@@ -4,5 +4,17 @@
     <title>Famous Quote Generator</title>
 </head>
 <body>
+    <div class="background-image"></div>
     <div class="Realtitle">Famous Quote Generator</div>
+    <div class="Quote">
+        Nothing.
+    </div>
+    <div id="Author">-Somebody</div>
+    <button class="ppap" onclick="changeText()">버튼을 눌러보세요</button>
+	<script>
+		function changeText() {
+			document.querySelector(".Quote").innerHTML = "라이라이차차차";
+			document.querySelector("#Author").innerHTML = "-황근출";
+		}
+	</script>
 </body>

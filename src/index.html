@@ -5,8 +5,11 @@
 </head>
 <body>
     <script>
-        var quoteList = new Array("달리는 기차 위에 중립은 없다", "만국의 노동자여, 단결하라!");
-        var authorList = new Array("하워드 진", "카를 마르크스");
+        // JavaScript 객체 형태로 데이터 정의
+        var quoteList = [
+            { quote: "달리는 기차 위에 중립은 없다", author: "하워드 진" },
+            { quote: "만국의 노동자여, 단결하라!", author: "카를 마르크스" }
+        ];
     </script>
     <div class="background-image"></div>
     <div class="Realtitle">Famous Quote Generator</div>
@@ -15,12 +18,15 @@
     </div>
     <div id="Author">-Somebody</div>
     <button class="ppap" onclick="changeText()">버튼을 눌러보세요</button>
-	<script>
-		function changeText() {
-            let quoteNum = Math.floor(Math.random()*2);
-			document.querySelector(".Quote").innerHTML = quoteList[quoteNum];
-			document.querySelector("#Author").innerHTML = "-"+authorList[quoteNum];
-			// document.querySelector("#Author").innerHTML = "-황근출";
-		}
-	</script>
+    <script>
+        function changeText() {
+            let quoteNum = Math.floor(Math.random()*quoteList.length);
+            document.querySelector(".Quote").innerHTML = quoteList[quoteNum].quote;
+            document.querySelector("#Author").innerHTML = "-"+quoteList[quoteNum].author;
+        }
+        
+        // JSON 문자열로 변환
+        var jsonQuoteList = JSON.stringify(quoteList);
+        console.log(jsonQuoteList);
+    </script>
 </body>

@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<link rel="stylesheet" type="text/css" href="css/style.css">
+<!-- The doctype declaration should be at the very beginning of the HTML file, before any other code. -->
+<html>
 <head>
     <title>Famous Quote Generator</title>
-    <script src="scripts.js"></script>
+    <!-- The link tag for the stylesheet should be placed inside the head element. -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
     <div class="background-image"></div>
@@ -12,11 +14,17 @@
     </div>
     <div id="Author">-Somebody</div>
     <button class="ppap" onclick="changeText()">버튼을 눌러보세요</button>
-    <script>
+
+    <!-- It's good to include the type attribute with the value "text/javascript" -->
+    <script type="text/javascript">
+        // This function generates a random quote and author and updates the quote and author elements in the HTML.
         function changeText() {
             let quoteNum = Math.floor(Math.random()*quoteList.length);
             document.querySelector(".Quote").innerHTML = quoteList[quoteNum].quote;
             document.querySelector("#Author").innerHTML = "-"+quoteList[quoteNum].author;
         }
     </script>
+    <!-- It's a good practice to place scripts at the end of the body tag so that the page content loads before the scripts are executed. -->
+    <script src="scripts.js"></script>
 </body>
+</html>
